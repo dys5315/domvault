@@ -1,0 +1,4 @@
+note,S_moat_severity,O_exploitability,D_undetectability,RPN,L_community_lift,G_genericizable,verdict,rationale
+"Example — pure mental model",1,1,1,1,5,yes,PUBLISH,"commodity teaching value; no moat"
+"Example — venture pricing playbook",5,5,4,100,4,partial,HOLD,"auto-fail: live pricing + JV split"
+"Example — venture concept, strippable",4,3,3,36,4,yes,GENERICIZE,"keep principle, strip client + numbers"

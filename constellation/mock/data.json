@@ -1,0 +1,23 @@
+{
+  "galaxies": [
+    { "id": "ai-engineering", "name": "AI Engineering", "color": "#7c5cff",
+      "stars": [
+        { "handle": "dom", "display": "Dom", "planets": ["Graph-RAG Traversal", "Agent Memory = Kalman Filter", "10% Model 90% Plumbing", "Attention as a Leaky Bucket"] },
+        { "handle": "ava", "display": "Ava", "planets": ["Eval Rubrics", "Retrieval Blind Spots"] },
+        { "handle": "kai", "display": "Kai", "planets": ["Self-Improving Harness", "Compression = Intelligence"] }
+      ]
+    },
+    { "id": "product-growth", "name": "Product & Growth", "color": "#ff5ca8",
+      "stars": [
+        { "handle": "dom", "display": "Dom", "planets": ["Funnel as State Machine", "The Missing Money Node", "Trojan-Horse GTM"] },
+        { "handle": "mira", "display": "Mira", "planets": ["Cool Is a Requirement", "Price the Lift"] }
+      ]
+    },
+    { "id": "quant-markets", "name": "Quant & Markets", "color": "#39d0d8",
+      "stars": [
+        { "handle": "dom", "display": "Dom", "planets": ["Backtest = Double Pendulum", "Volatility Harvesting"] },
+        { "handle": "leo", "display": "Leo", "planets": ["Holdout Rule", "Goodhart = Overfitting"] }
+      ]
+    }
+  ]
+}

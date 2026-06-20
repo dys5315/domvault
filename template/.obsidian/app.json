@@ -1,0 +1,5 @@
+{
+  "userIgnoreFilters": [".github/", "00-inbox/_scripts/"],
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest"
+}

@@ -1,0 +1,20 @@
+# Obsidian local/session state (churns constantly)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# Keep tracked on purpose: .obsidian/graph.json (color groups), app.json, appearance.json, core-plugins.json, snippets/
+
+# OS / cruft
+.DS_Store
+Thumbs.db
+
+# Agent session dirs
+.claude/
+
+# Build deps that may land in the vault by accident
+node_modules/
+__pycache__/
+*.pyc
+.vault-index/

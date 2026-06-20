@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://constellation.dev/schema/node.schema.json",
+  "title": "Constellation Node (Planet) Manifest",
+  "type": "object",
+  "required": ["id", "title", "author", "license", "content_hash", "published_at", "version"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "description": "Content-addressed planet id, e.g. planet_<hash>" },
+    "title": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "description": "Public abstract shown in the universe view" },
+    "author": {
+      "type": "object",
+      "required": ["handle", "star"],
+      "properties": {
+        "handle": { "type": "string" },
+        "display": { "type": "string" },
+        "star": { "type": "string", "description": "Stable id for the author's brain (solar system)" }
+      },
+      "additionalProperties": false
+    },
+    "galaxy": { "type": "array", "items": { "type": "string" }, "description": "Topic/org clusters" },
+    "license": { "type": "string", "description": "SPDX-like id, e.g. PolyForm-Noncommercial-1.0.0" },
+    "links": { "type": "array", "items": { "type": "string" }, "description": "Outbound planet ids" },
+    "origin": { "type": ["string", "null"], "description": "Source planet id if this is a fork (moon)" },
+    "content_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "signature": { "type": "string", "description": "Author signature over the manifest" },
+    "published_at": { "type": "string", "format": "date-time" },
+    "version": { "type": "integer", "minimum": 1 },
+    "price": {
+      "type": ["object", "null"],
+      "description": "Omit/null for free planets",
+      "properties": {
+        "amount": { "type": "number", "minimum": 0 },
+        "currency": { "type": "string" },
+        "grants_license": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

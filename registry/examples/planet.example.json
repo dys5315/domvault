@@ -1,0 +1,14 @@
+{
+  "id": "planet_8f2c1d9a4b",
+  "title": "Model the Funnel as a One-Way State Machine",
+  "summary": "Treat a conversion funnel as a state machine where transitions are irreversible; dead CTAs are unreachable states. A feature is 'done' only when its money node is reachable end-to-end.",
+  "author": { "handle": "dom", "display": "Dom S.", "star": "star_dom" },
+  "galaxy": ["product", "growth"],
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "links": ["planet_3a91ee20fc"],
+  "origin": null,
+  "content_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "published_at": "2026-06-19T00:00:00Z",
+  "version": 1,
+  "price": null
+}

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Domvault safety guard: prevent accidentally committing real notes into the PUBLIC repo.
+# The template/ content folders must stay empty (only .gitkeep). Enable once with:
+#   git config core.hooksPath .githooks
+set -euo pipefail
+
+PROTECTED='^template/(10-projects|20-research|30-frameworks|40-personal|60-reference)/'
+offenders="$(git diff --cached --name-only | grep -E "$PROTECTED" | grep -v '/\.gitkeep$' || true)"
+
+if [ -n "$offenders" ]; then
+  echo "✗ Blocked: these look like real notes in template/ content folders, which must ship EMPTY in the public repo:" >&2
+  echo "$offenders" | sed 's/^/    /' >&2
+  echo "  If this is intentional sample content, commit with: git commit --no-verify" >&2
+  exit 1
+fi
+exit 0
