@@ -40,3 +40,4 @@ here — effort is never negative — so the algorithm is valid as-is.
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
 
+

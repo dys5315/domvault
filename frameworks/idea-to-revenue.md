@@ -39,3 +39,4 @@ Decide how the idea *dies* before you start:
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
 
+

@@ -1,5 +1,9 @@
 # 🧠 Domvault — an AI-augmented second brain you can self-host
 
+<p align="center">
+  <img src="assets/hero.svg" alt="Domvault — a universe of brains: own your stack, share by consent, credit by default" width="100%">
+</p>
+
 > A Markdown-native knowledge engine (Obsidian + Claude) with a repeatable ingestion pipeline, a self-synthesis loop that generates new connections while you sleep, and an **opt-in** publishing layer that lets brains share knowledge into a shared galaxy — **Constellation**.
 
 Domvault is the *engine*, not the *content*. You bring your own notes; the repo ships the structure, the workflows, the scripts, and the agent instructions that make a plain folder of Markdown behave like a living, self-improving graph.

@@ -46,3 +46,4 @@ Rumination is an unstable closed loop, and the fix is a governor, not more gain.
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
 
+

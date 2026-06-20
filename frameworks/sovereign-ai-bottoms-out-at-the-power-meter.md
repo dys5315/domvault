@@ -39,3 +39,4 @@ question, not an identity, and it lives in kWh/day.
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
 
+

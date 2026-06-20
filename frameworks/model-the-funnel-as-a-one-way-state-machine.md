@@ -40,3 +40,4 @@ event: the FSM's transition log *is* that event stream.
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
 
+
