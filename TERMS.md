@@ -36,7 +36,7 @@ people can share knowledge they **choose** to publish; it is not a backdoor into
 
 ## Contact
 
-Operator: **<your-name>** — `<your-contact-email>`.
+Operator: **Dom Sadarangani** — `dom.sadarangani@gmail.com`.
 For takedown/removal requests, include the `planet_id`.
 
 ---
