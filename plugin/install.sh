@@ -28,6 +28,12 @@ mkdir -p "$TARGET"
 # copy template content (including dotfiles) but never the .git of the repo
 cp -R "$TEMPLATE"/. "$TARGET"/
 
+# wire the Claude Code slash commands into the new brain (local tooling)
+if [ -d "$REPO_DIR/plugin/commands" ]; then
+  mkdir -p "$TARGET/.claude/commands"
+  cp -R "$REPO_DIR/plugin/commands/." "$TARGET/.claude/commands/"
+fi
+
 # stamp today's date into the sync board + hubs
 TODAY="$(date +%F)"
 if command -v sed >/dev/null; then
@@ -48,8 +54,11 @@ bold "✓ Brain scaffolded."
 cat <<NEXT
 
 Next steps:
-  1. Open the folder in Obsidian:   $TARGET
+  1. Open the folder in Obsidian (File → Open folder as vault → $TARGET).
+     Graph colors, Templates (00-inbox/_templates), and Daily Notes are pre-configured.
   2. Point your agent at it (Claude Code / Cowork): it reads CLAUDE.md automatically.
+     Slash commands (/ingest-screenshots, /ingest-chats, /synthesize, /publish) are
+     installed in .claude/commands/.
   3. Read:  "How to Use Your Brain.md"
   4. Optional weekly synthesis loop:
        crontab -e   →   0 9 * * 0  cd "$TARGET" && <your-agent-cmd> "run the synthesis loop in CLAUDE.md"

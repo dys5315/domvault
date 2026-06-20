@@ -24,8 +24,12 @@ This copies the empty template, stamps today's date, and `git init`s `~/my-brain
 repo. It will refuse to overwrite a non-empty folder.
 
 ## 3. Open it
-- In Obsidian: *Open folder as vault* → `~/my-brain`.
-- Point your agent at it. Claude reads `CLAUDE.md` automatically.
+- In Obsidian: *Open folder as vault* → `~/my-brain` (click *Trust author and enable plugins*
+  if prompted). Graph colors, the **Templates** folder (`00-inbox/_templates`), and **Daily
+  Notes** are pre-configured, so they work immediately.
+- Point your agent at it. Claude reads `CLAUDE.md` automatically. The slash commands
+  (`/ingest-screenshots`, `/ingest-chats`, `/synthesize`, `/publish`) are installed in
+  `.claude/commands/`.
 
 ## 4. First hour
 1. Read `How to Use Your Brain.md`.

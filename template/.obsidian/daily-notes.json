@@ -1,0 +1,5 @@
+{
+  "folder": "00-inbox",
+  "format": "YYYY-MM-DD",
+  "template": "00-inbox/_templates/daily"
+}
