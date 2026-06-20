@@ -44,3 +44,4 @@ append-only ratchets means the audit trail and the irreversibility are the same 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
+

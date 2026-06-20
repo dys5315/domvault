@@ -38,8 +38,10 @@
 <canvas id="c"></canvas>
 <script type="module">
 import { mapUniverseToData } from './map.js';
-// Configurable registry base URL — ?registry=http://host:port overrides the local default.
-const REGISTRY = new URLSearchParams(location.search).get('registry') || 'http://localhost:8787';
+import { DEFAULT_REGISTRY } from './registry.config.js';
+// Registry base URL: ?registry=<url> overrides the configured default (set DEFAULT_REGISTRY
+// to your hosted HTTPS URL after deploy). Falls back to the offline mock if unreachable.
+const REGISTRY = new URLSearchParams(location.search).get('registry') || DEFAULT_REGISTRY;
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
 const tip = document.getElementById('tip'), crumbs = document.getElementById('crumbs');
 const detail = document.getElementById('detail'), detailBody = document.getElementById('detailBody');

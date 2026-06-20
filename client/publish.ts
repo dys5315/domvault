@@ -39,6 +39,10 @@ export interface PublishConfig {
   confirm: ConfirmFn;
   /** Override the registry POST (defaults to node:http). */
   post?: PostFn;
+  /** Private-beta publish token (the registry's PUBLISH_TOKEN). Sent as
+   *  `Authorization: Bearer`. Authenticates the WRITE only — never signed into the
+   *  manifest, never written to the vault. Omit when the registry's gate is off. */
+  publishToken?: string;
   /** Override signing (defaults to keys.ts ed25519 sign over the manifest). */
   sign?: SignFn;
   /** Link resolution + other strip options. */
@@ -83,7 +87,8 @@ export async function publishNote(raw: string, config: PublishConfig): Promise<P
   const signedManifest: NodeManifest = { ...planet.manifest, signature };
 
   // 6. POST — publish the signed manifest + body + public key (SPEC §6).
-  const post = config.post ?? defaultPost;
+  //    config.publishToken (if set) gates the write during private beta.
+  const post = config.post ?? makeDefaultPost(config.publishToken);
   const resp = await post(`${trimSlash(config.registryUrl)}/planets`, {
     manifest: signedManifest,
     body: planet.body,
@@ -123,25 +128,31 @@ function trimSlash(url: string): string {
   return url.replace(/\/+$/, "");
 }
 
-/** Default registry POST over node:http (no fetch/runtime deps). */
-const defaultPost: PostFn = async (url, payload) => {
-  const { request } = await import("node:http");
-  const { request: requestHttps } = await import("node:https");
-  return new Promise<PublishResponse>((resolve, reject) => {
-    const u = new URL(url);
-    const data = Buffer.from(JSON.stringify(payload), "utf8");
-    const req = (u.protocol === "https:" ? requestHttps : request)(
-      {
-        protocol: u.protocol,
-        hostname: u.hostname,
-        port: u.port,
-        path: u.pathname + u.search,
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          "content-length": data.length,
+/** Default registry POST over node:http (no fetch/runtime deps). When a publish
+ *  token is supplied (the private-beta gate), it rides as `Authorization: Bearer`.
+ *  The token authenticates the WRITE; it is NOT part of the signed manifest and never
+ *  touches the vault — it's a beta access credential, set via env on the publisher. */
+export function makeDefaultPost(token?: string): PostFn {
+  return async (url, payload) => {
+    const { request } = await import("node:http");
+    const { request: requestHttps } = await import("node:https");
+    return new Promise<PublishResponse>((resolve, reject) => {
+      const u = new URL(url);
+      const data = Buffer.from(JSON.stringify(payload), "utf8");
+      const headers: Record<string, string | number> = {
+        "content-type": "application/json",
+        "content-length": data.length,
+      };
+      if (token) headers["authorization"] = `Bearer ${token}`;
+      const req = (u.protocol === "https:" ? requestHttps : request)(
+        {
+          protocol: u.protocol,
+          hostname: u.hostname,
+          port: u.port,
+          path: u.pathname + u.search,
+          method: "POST",
+          headers,
         },
-      },
       (res) => {
         const chunks: Buffer[] = [];
         res.on("data", (c: Buffer) => chunks.push(c));
@@ -160,8 +171,9 @@ const defaultPost: PostFn = async (url, payload) => {
         });
       },
     );
-    req.on("error", reject);
-    req.write(data);
-    req.end();
-  });
-};
+      req.on("error", reject);
+      req.write(data);
+      req.end();
+    });
+  };
+}

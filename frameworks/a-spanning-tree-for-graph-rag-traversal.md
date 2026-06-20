@@ -48,3 +48,4 @@ operationalizes a hard budget: bounded depth + visited-set = predictable token c
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
+

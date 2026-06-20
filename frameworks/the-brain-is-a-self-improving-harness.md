@@ -53,3 +53,4 @@ Automate the *proposing and scoring*; keep a human *gate* on promotion.
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
+

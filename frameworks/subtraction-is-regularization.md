@@ -41,3 +41,4 @@ domain — the bias-variance curve — instead of a vague "keep it simple."
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
+

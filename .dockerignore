@@ -1,0 +1,16 @@
+node_modules
+dist
+registry/.data
+.git
+.githooks
+.playwright-mcp
+constellation
+docs
+frameworks
+observatory
+client
+e2e
+scripts
+template
+*.md
+*.png

@@ -14,6 +14,7 @@ import { PlanetStore } from "./store.ts";
 import { validateManifest } from "./validate.ts";
 import { contentHash, planetId } from "./hash.ts";
 import { verify } from "./keys.ts";
+import { loadConfig, RateLimiter, clientIp, bearerOk, type RegistryConfig } from "./config.ts";
 
 interface PublishRequest {
   manifest: unknown;
@@ -21,17 +22,18 @@ interface PublishRequest {
   publicKey: unknown;
 }
 
-const MAX_BODY_BYTES = 5 * 1024 * 1024; // 5 MiB guard against unbounded uploads
+// Active CORS origin for the running server (set per createServer call). The public
+// read API is crawlable by design (SPEC §6), so "*" is the correct default; a deploy
+// may pin it to the Explorer origin via CORS_ORIGIN.
+let CORS_ORIGIN = "*";
 
 function sendJson(res: ServerResponse, status: number, payload: unknown): void {
   const data = JSON.stringify(payload);
   res.writeHead(status, {
     "content-type": "application/json; charset=utf-8",
     "content-length": Buffer.byteLength(data),
-    // The registry is a PUBLIC, crawlable read surface (SPEC §6, federation) — the
-    // whole point is that any brain / the Explorer can fetch /universe. Permissive
-    // CORS on responses lets the browser Explorer read it from a different origin.
-    "access-control-allow-origin": "*",
+    "access-control-allow-origin": CORS_ORIGIN,
+    vary: "origin",
   });
   res.end(data);
 }
@@ -40,13 +42,13 @@ function sendError(res: ServerResponse, status: number, error: string, detail?: 
   sendJson(res, status, detail ? { error, detail } : { error });
 }
 
-function readBody(req: IncomingMessage): Promise<string> {
+function readBody(req: IncomingMessage, maxBytes: number): Promise<string> {
   return new Promise((resolve, reject) => {
     const chunks: Buffer[] = [];
     let size = 0;
     req.on("data", (chunk: Buffer) => {
       size += chunk.length;
-      if (size > MAX_BODY_BYTES) {
+      if (size > maxBytes) {
         reject(new Error("request body too large"));
         req.destroy();
         return;
@@ -66,11 +68,31 @@ function summarize(p: StoredPlanet) {
 /**
  * Build the request handler bound to a given store. Exported as a factory so
  * tests can drive it without binding a port (createServer().listen(0)).
+ *
+ * The optional config carries the production hardening (durable dir, beta gate,
+ * rate limits, CORS, logging). Defaults (loadConfig with no env) keep writes OPEN,
+ * a generous rate limit, and logging OFF — so existing tests run unchanged.
  */
-export function createServer(store: PlanetStore = new PlanetStore()): Server {
+export function createServer(
+  store: PlanetStore = new PlanetStore(),
+  config: RegistryConfig = loadConfig({}),
+): Server {
+  CORS_ORIGIN = config.corsOrigin;
+  const writeLimiter = new RateLimiter(config.rateLimitPerMin);
   return createHttpServer(async (req, res) => {
+    const started = Date.now();
+    res.on("finish", () => {
+      if (config.logRequests) {
+        // OPS-ONLY structured log — method/path/status/ms/ip. NEVER request bodies,
+        // manifest content, or anything that resembles user analytics (zero telemetry).
+        const ip = clientIp(req.headers, req.socket?.remoteAddress);
+        process.stderr.write(
+          JSON.stringify({ m: req.method, p: (req.url ?? "/").split("?")[0], s: res.statusCode, ms: Date.now() - started, ip }) + "\n",
+        );
+      }
+    });
     try {
-      await route(req, res, store);
+      await route(req, res, store, config, writeLimiter);
     } catch (err) {
       const message = err instanceof Error ? err.message : "internal error";
       sendError(res, 500, message);
@@ -82,14 +104,50 @@ async function route(
   req: IncomingMessage,
   res: ServerResponse,
   store: PlanetStore,
+  config: RegistryConfig,
+  writeLimiter: RateLimiter,
 ): Promise<void> {
   const method = req.method ?? "GET";
   const url = new URL(req.url ?? "/", "http://localhost");
   const segments = url.pathname.split("/").filter(Boolean);
 
+  // CORS preflight — browsers send OPTIONS before a cross-origin POST with Authorization.
+  if (method === "OPTIONS") {
+    res.writeHead(204, {
+      "access-control-allow-origin": config.corsOrigin,
+      "access-control-allow-methods": "GET, POST, DELETE, OPTIONS",
+      "access-control-allow-headers": "content-type, authorization",
+      "access-control-max-age": "86400",
+    });
+    res.end();
+    return;
+  }
+
+  // GET /healthz — liveness/readiness probe (no auth, no body).
+  if (method === "GET" && segments.length === 1 && segments[0] === "healthz") {
+    return sendJson(res, 200, { ok: true, service: "constellation-registry" });
+  }
+
+  // ── WRITE gating (POST/DELETE): private-beta token + per-IP/per-star rate limit ──
+  const isWrite =
+    (method === "POST" && segments.length === 1 && segments[0] === "planets") ||
+    (method === "DELETE" && segments.length === 2 && segments[0] === "planets");
+  if (isWrite) {
+    // Private-beta gate: when a PUBLISH_TOKEN is configured, writes require it.
+    // Reads (/universe, /planets, /stars, /galaxies) are ALWAYS public. Easy to
+    // open up later by unsetting the token (SPEC: reads public, writes gated in beta).
+    if (config.publishToken && !bearerOk(req.headers["authorization"], config.publishToken)) {
+      return sendError(res, 401, "publishing is in private beta — a publish token is required");
+    }
+    const ip = clientIp(req.headers, req.socket?.remoteAddress);
+    if (!writeLimiter.allow(`ip:${ip}`)) {
+      return sendError(res, 429, "rate limit exceeded (per-IP write budget)");
+    }
+  }
+
   // POST /planets
   if (method === "POST" && segments.length === 1 && segments[0] === "planets") {
-    return handlePublish(req, res, store);
+    return handlePublish(req, res, store, config, writeLimiter);
   }
 
   // GET /planets/:id   ·   DELETE /planets/:id
@@ -124,10 +182,12 @@ async function handlePublish(
   req: IncomingMessage,
   res: ServerResponse,
   store: PlanetStore,
+  config: RegistryConfig,
+  writeLimiter: RateLimiter,
 ): Promise<void> {
   let parsed: PublishRequest;
   try {
-    const raw = await readBody(req);
+    const raw = await readBody(req, config.maxBodyBytes);
     parsed = JSON.parse(raw) as PublishRequest;
   } catch (err) {
     const message = err instanceof Error ? err.message : "invalid JSON";
@@ -148,6 +208,12 @@ async function handlePublish(
     return sendError(res, 400, "manifest validation failed", validation.errors);
   }
   const m: NodeManifest = validation.manifest;
+
+  // Per-STAR write budget (in addition to per-IP, checked in route()) — one brain
+  // can't flood the registry even from many IPs.
+  if (!writeLimiter.allow(`star:${m.author?.star ?? "unknown"}`)) {
+    return sendError(res, 429, "rate limit exceeded (per-star write budget)");
+  }
 
   // A signature is required to publish (SPEC §3: publishing is signed).
   if (typeof m.signature !== "string" || m.signature.length === 0) {
@@ -191,11 +257,6 @@ function handleDelete(res: ServerResponse, store: PlanetStore, id: string): void
   sendJson(res, 200, { id, unpublished: true });
 }
 
-// Run directly (npm run registry:dev) — not during tests/imports.
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const port = Number(process.env.PORT ?? 8787);
-  createServer().listen(port, () => {
-    // eslint-disable-next-line no-console
-    console.log(`Constellation registry listening on :${port}`);
-  });
-}
+// The runnable entrypoint lives in main.ts (single place that calls listen, so a
+// production bundle never double-binds). Run it via `npm run registry:dev` (tsx) or
+// `node dist/registry.mjs` (bundled). server.ts stays import-only: factory + handlers.

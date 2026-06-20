@@ -28,3 +28,4 @@ registry/.data/
 .playwright-mcp/
 *.png
 /tmp
+dist/

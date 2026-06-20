@@ -48,6 +48,7 @@ async function runPublish(notePath: string): Promise<number> {
       author,
       privateKey,
       publicKey,
+      publishToken: env("CONSTELLATION_TOKEN"),
       confirm: async (diff) => {
         process.stdout.write(diff + "\n\n");
         return askYesNo("Publish this to the registry?");

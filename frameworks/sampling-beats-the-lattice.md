@@ -41,3 +41,4 @@ pricing, risk simulation, integral estimation. One mental model, three domains.
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
+

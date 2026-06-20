@@ -108,6 +108,7 @@ export async function publishAll() {
       const result = await publishNote(raw, {
         registryUrl: REGISTRY,
         author,
+        publishToken: process.env.CONSTELLATION_TOKEN,
         privateKey,
         publicKey,
         confirm: async () => true, // batch: the diff was reviewed in the genericization step

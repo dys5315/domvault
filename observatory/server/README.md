@@ -8,6 +8,11 @@ runtime dependencies** (Node built-ins only) and **no telemetry**.
 Spec: [`../../docs/09-observatory-agent-query-endpoint.md`](../../docs/09-observatory-agent-query-endpoint.md).
 Shared types (do not edit): [`types.ts`](./types.ts).
 
+> **External retrieval is optional, disabled by default, and a future enhancement.** This server
+> runs fully on the internal (published-index) retriever alone. The external/YottaGraph source
+> (Prompt G) is off by default and the endpoint degrades to internal-only without it — no external
+> dependency is required to ship.
+
 ## Files
 
 | File | Role |

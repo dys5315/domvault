@@ -36,3 +36,4 @@ loss — it's forgone compounding that permanently lowers the curve.
 ---
 *Genericized example from the Domvault engine. Original mental model © Dom Sadarangani, shared under PolyForm Noncommercial 1.0.0.*
 
+

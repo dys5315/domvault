@@ -73,7 +73,15 @@ unreachable the Explorer **degrades to the offline mock** (`constellation/mock/d
 `A` 11 · `C` 14 · `F` 20 · `G` 16 · **E2E** 2 (the whole pipeline: publish → registry → crawl →
 retrieve → fuse → synthesize, with every invariant asserted end-to-end).
 
-## Going live with YottaGraph
+## External retrieval (YottaGraph) — optional, disabled by default, future
+
+**The system ships and runs fully without any external source.** The Observatory answers from your
+own published Constellation index alone; external retrieval is **off by default** (`allowExternal`
+defaults to false) and **degrades to internal-only** if a source is disabled, unauthed, down, or
+over budget. YottaGraph is a *future enhancement*, not a launch dependency — there is nothing to
+configure, host, or wait on to go live.
+
+### Going live with YottaGraph (later, only if you want external facts)
 
 The adapter is mock-developed and REST-first. When Lovelace access is provisioned, fill the three
 `<FILL-IN>` seams in `observatory/server/retrievers/yottagraph.ts` (the `YottaGraphConfig`

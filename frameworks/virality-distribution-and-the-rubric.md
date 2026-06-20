@@ -46,3 +46,4 @@ turns it from a hindsight label into a predictive tool.
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
 
+
