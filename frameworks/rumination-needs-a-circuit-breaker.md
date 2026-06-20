@@ -47,3 +47,4 @@ Rumination is an unstable closed loop, and the fix is a governor, not more gain.
 
 
 
+

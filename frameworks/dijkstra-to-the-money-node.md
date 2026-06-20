@@ -41,3 +41,4 @@ here — effort is never negative — so the algorithm is valid as-is.
 
 
 
+

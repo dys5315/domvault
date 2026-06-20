@@ -38,3 +38,4 @@ loss — it's forgone compounding that permanently lowers the curve.
 
 
 
+

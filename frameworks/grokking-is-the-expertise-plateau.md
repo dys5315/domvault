@@ -47,3 +47,4 @@ Quitting during the plateau is exiting one epoch before grokking.
 
 
 
+
