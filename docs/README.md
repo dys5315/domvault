@@ -8,3 +8,5 @@
 6. [IP & licensing](06-ip-and-licensing.md) — protect content + engine, license comparison.
 7. [Claude Code prompts](07-claude-code-prompts.md) — hand-off prompts to build the backend + app.
 8. [The Publish Rubric](08-what-to-publish-rubric.md) — score what's safe to share, built from the brain's own frameworks.
+9. [Observatory: agent query endpoint](09-observatory-agent-query-endpoint.md) — Chunk / Retriever / Synthesizer interfaces + the two-gate trust model (spec for Prompt F).
+10. [YottaGraph retriever + fusion](10-yottagraph-retriever-adapter.md) — transport-agnostic external source, fused ranking, redistribution + injection safety (spec for Prompt G).
