@@ -42,7 +42,7 @@ sent. Your **public** key is your star identity.
 ## 3. Point at the hosted registry
 
 ```bash
-export CONSTELLATION_REGISTRY="<YOUR_REGISTRY_URL>"   # e.g. https://domvault-registry.fly.dev
+export CONSTELLATION_REGISTRY="https://domvault-registry.fly.dev"   # e.g. https://domvault-registry.fly.dev
 export CONSTELLATION_HANDLE="yourname"
 export CONSTELLATION_STAR="star_yourname"
 export CONSTELLATION_PRIVKEY=~/.constellation/id_ed25519.pem
@@ -82,7 +82,7 @@ Open the Explorer (the operator can host it, or run it locally):
 
 ```bash
 npm run demo          # local: serves the Explorer at http://localhost:8080
-# or open constellation/index.html?registry=<YOUR_REGISTRY_URL>
+# or open constellation/index.html?registry=https://domvault-registry.fly.dev
 ```
 
 Your solar system now sits in the universe next to everyone else's. Click any planet to read its

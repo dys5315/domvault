@@ -1,40 +1,42 @@
-# Fly.io config for the Constellation registry. Deploy with:
-#   fly launch --no-deploy        # creates the app (review this file)
-#   fly volume create reg_data --size 1     # 1GB persistent volume
-#   fly secrets set PUBLISH_TOKEN=<a-long-random-string>   # private-beta gate
-#   fly deploy
+# fly.toml app configuration file generated for domvault-registry on 2026-06-20T15:24:29-04:00
 #
-# Reads (/universe, /planets, /healthz) are public; writes need the PUBLISH_TOKEN.
-# HTTPS is terminated by Fly (force_https below). Storage persists on the volume.
-app = "domvault-registry"        # change to your unique app name
-primary_region = "iad"            # pick a region near you
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'domvault-registry'
+primary_region = 'ewr'
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
 
 [env]
-  PORT = "8080"
-  STORE_DIR = "/data"
-  RATE_LIMIT_PER_MIN = "120"
-  LOG_REQUESTS = "1"
-  # CORS_ORIGIN defaults to "*" (public read API). Pin it to your Explorer origin if you host one.
+  LOG_REQUESTS = '1'
+  PORT = '8080'
+  RATE_LIMIT_PER_MIN = '120'
+  STORE_DIR = '/data'
 
 [[mounts]]
-  source = "reg_data"             # the volume created with `fly volume create reg_data`
-  destination = "/data"           # = STORE_DIR; the planet store persists here
+  source = 'reg_data'
+  destination = '/data'
 
 [http_service]
   internal_port = 8080
-  force_https = true              # HTTPS only
-  auto_stop_machines = "suspend"
+  force_https = true
+  auto_stop_machines = 'suspend'
   auto_start_machines = true
   min_machines_running = 0
 
-  [http_service.http_options.response.headers]
-    # belt-and-suspenders; the app also sets CORS itself
+  [http_service.http_options]
+    [http_service.http_options.response]
 
   [[http_service.checks]]
-    method = "GET"
-    path = "/healthz"
-    interval = "30s"
-    timeout = "3s"
+    interval = '30s'
+    timeout = '3s'
+    method = 'GET'
+    path = '/healthz'
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 1024
