@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, rag, graph-rag, networking, retrieval]
+galaxy: [ai-engineering, systems]
+planet_id: planet_9e31166f4b13e00a03aea665becbd2c52724dca7
 ---
 
 # A Spanning Tree for Graph-RAG Traversal
@@ -45,3 +47,4 @@ operationalizes a hard budget: bounded depth + visited-set = predictable token c
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

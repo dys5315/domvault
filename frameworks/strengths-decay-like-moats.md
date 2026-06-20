@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, strategy, self-development, moats]
+galaxy: [leadership]
+planet_id: planet_457fe491ae0142fa59c9f6a60c9f7776873f1ef8
 ---
 
 # Strengths Decay Like Moats
@@ -42,3 +44,4 @@ for both.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, physics, systems-thinking, control]
+galaxy: [systems, quant-markets]
+planet_id: planet_6993ca2cf14c0cddd17d335e97ddc016771e8031
 ---
 
 # Mechanical Stress as Balanced Opposing Forces
@@ -35,3 +37,4 @@ in any real build.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

@@ -28,12 +28,23 @@
   <p>A universe of <b>galaxies</b> (topics) → <b>solar systems</b> (brains) → <b>planets</b> (published notes). Scroll/click to zoom in, click empty space or a crumb to zoom out.</p>
   <div id="crumbs"></div>
 </div>
-<div id="legend">Each ☀️ is one person's brain. A 🪐 only appears if its owner <b>opted in</b> to publish it. Mock data.</div>
+<div id="legend">Each ☀️ is one person's brain. A 🪐 only appears if its owner <b>opted in</b> to publish it. <span id="source">connecting…</span></div>
 <div id="tip"></div>
+<div id="detail" style="position:fixed; right:16px; top:16px; z-index:30; max-width:320px; padding:14px 16px;
+  background:#0d1126; border:1px solid #2a3260; border-radius:12px; font-size:12px; display:none;">
+  <button id="detailClose" style="position:absolute; top:8px; right:10px; background:none; border:none; color:#8b93c0; cursor:pointer; font-size:15px;">×</button>
+  <div id="detailBody"></div>
+</div>
 <canvas id="c"></canvas>
-<script>
+<script type="module">
+import { mapUniverseToData } from './map.js';
+// Configurable registry base URL — ?registry=http://host:port overrides the local default.
+const REGISTRY = new URLSearchParams(location.search).get('registry') || 'http://localhost:8787';
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
 const tip = document.getElementById('tip'), crumbs = document.getElementById('crumbs');
+const detail = document.getElementById('detail'), detailBody = document.getElementById('detailBody');
+const sourceEl = document.getElementById('source');
+document.getElementById('detailClose').onclick = () => { detail.style.display = 'none'; };
 let W,H,DPR; function resize(){ DPR=devicePixelRatio||1; W=cv.width=innerWidth*DPR; H=cv.height=innerHeight*DPR;
   cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px'; }
 addEventListener('resize', resize); resize();
@@ -145,9 +156,30 @@ cv.addEventListener('click',e=>{
     else if(view.mode==='galaxy'){ view={mode:'universe'}; }
   } else if(hit.type==='galaxy'){ view={mode:'galaxy',galaxy:hit.o}; }
   else if(hit.type==='star'){ view={mode:'star',star:hit.o}; }
-  else if(hit.type==='planet'){ tip.textContent='🪐 '+hit.o.name+' (would open the note / pull dialog)'; }
+  else if(hit.type==='planet'){ showPlanet(hit.o); }
   renderCrumbs();
 });
+
+// Clicking a planet shows its manifest: title, author, license, lineage/origin, version.
+function showPlanet(p){
+  const m = p.manifest;
+  if(!m){ detailBody.innerHTML = '<b>🪐 '+esc(p.name)+'</b>'; detail.style.display='block'; return; }
+  const lineage = m.origin ? ('🌙 moon of <code>'+esc(m.origin)+'</code>') : 'origin planet (no fork)';
+  const price = m.price ? (m.price.amount+' '+(m.price.currency||'')+' → grants '+esc(m.price.grants_license||'')) : 'free';
+  detailBody.innerHTML =
+    '<div style="font-size:13px;font-weight:600;margin:0 18px 8px 0;">🪐 '+esc(m.title)+'</div>'+
+    row('author', '☀️ '+esc(m.author?.display||m.author?.handle||'—')+' <span style="color:#8b93c0">('+esc(m.author?.star||'')+')</span>')+
+    row('license', esc(m.license||'—'))+
+    row('lineage', lineage)+
+    row('version', 'v'+esc(String(m.version??1))+' · '+esc((m.published_at||'').slice(0,10)))+
+    row('galaxy', (m.galaxy||[]).map(esc).join(', ')||'—')+
+    row('price', price)+
+    row('id', '<code style="font-size:10px">'+esc(m.id||'')+'</code>')+
+    (m.signature ? '<div style="margin-top:8px;color:#5cd6a8;font-size:11px;">✓ signed manifest (authorship provable)</div>' : '');
+  detail.style.display='block';
+}
+function row(k,v){ return '<div style="margin:3px 0;"><span style="color:#8b93c0;display:inline-block;width:58px;">'+k+'</span>'+v+'</div>'; }
+function esc(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 function renderCrumbs(){
   let html='<a data-l="universe">🌌 Universe</a>';
   if(view.mode==='galaxy'||view.mode==='star'){ const g=view.galaxy||view.star.gal; html+=' › <a data-l="galaxy">✨ '+g.name+'</a>'; }
@@ -160,11 +192,25 @@ function renderCrumbs(){
   });
 }
 
-fetch('mock/data.json').then(r=>r.json()).then(d=>{ DATA=d; layout(); renderCrumbs(); draw(); })
-  .catch(()=>{ /* file:// fetch blocked — inline fallback */
-    DATA={galaxies:[{id:'demo',name:'Demo Galaxy',color:'#7c5cff',stars:[{handle:'you',display:'You',planets:['Open via a local server to see real mock data']}]}]};
-    layout(); renderCrumbs(); draw();
-  });
+// LIVE-first load: try the registry's /universe; if it's down/unreachable, DEGRADE to
+// the offline mock (constellation/mock/data.json); last resort, an inline note.
+// (Invariant: the Explorer always renders — it never hard-depends on the registry.)
+function start(data, source){ DATA=data; sourceEl.textContent=source; layout(); renderCrumbs(); draw(); }
+
+fetch(REGISTRY.replace(/\/+$/,'')+'/universe')
+  .then(r=>{ if(!r.ok) throw new Error('registry '+r.status); return r.json(); })
+  .then(u=>{
+    const data = mapUniverseToData(u.planets||[]);
+    if(!data.galaxies.length) throw new Error('registry empty');
+    const planetCount=(u.planets||[]).length;
+    start(data, '🟢 Live — '+planetCount+' planets from '+REGISTRY);
+  })
+  .catch(()=> fetch('mock/data.json').then(r=>r.json())
+    .then(d=> start(d, '🟡 Mock data (registry unreachable — start it with: npm run demo)'))
+    .catch(()=> start(
+      {galaxies:[{id:'demo',name:'Demo Galaxy',color:'#7c5cff',stars:[{handle:'you',display:'You',planets:['Open via a local server (npm run demo) to see real planets']}]}]},
+      '⚪ Offline fallback'))
+  );
 addEventListener('resize',()=>{ layout(); });
 </script>
 </body>

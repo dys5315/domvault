@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, learning, onboarding, product, pedagogy]
+galaxy: [knowledge, product-growth]
+planet_id: planet_32515919c455d252cf6b7e05e0633ee0ecd6c58b
 ---
 
 # The Barrier Is the Notation (Symbol Terror Is an Onboarding Tax)
@@ -39,3 +41,4 @@ first appears, instead of assuming fluency.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

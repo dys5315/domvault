@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, rag, retrieval, ai-engineering, coverage]
+galaxy: [ai-engineering]
+planet_id: planet_1625e50c06eea3a7638fbcef8633600dfb72ab98
 ---
 
 # RAG Searches Under the Streetlight (Coverage Is the Hidden Failure)
@@ -47,3 +49,4 @@ confidently route around. Retrieval silence reads as "there's nothing on this," 
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

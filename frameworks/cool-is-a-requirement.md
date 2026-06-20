@@ -1,10 +1,12 @@
 ---
-title: Cool Is a Requirement — iPod, Not Zune
+title: "Cool Is a Requirement — iPod, Not Zune"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, product, brand, virality, distribution]
+galaxy: [product-growth]
+planet_id: planet_eda65cb67466bca3b2253f622979af603eab7714
 ---
 
 # Cool Is a Requirement — iPod, Not Zune
@@ -35,3 +37,4 @@ desirability is distribution you don't pay for.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

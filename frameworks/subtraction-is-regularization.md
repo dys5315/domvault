@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ml, product, simplicity, regularization]
+galaxy: [ai-engineering, product-growth, systems]
+planet_id: planet_15aa12ceb45d8233975db2b9fa14b5af08807fa4
 ---
 
 # Subtraction Is Regularization (Fewer Parameters Generalize Better)
@@ -38,3 +40,4 @@ domain — the bias-variance curve — instead of a vague "keep it simple."
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

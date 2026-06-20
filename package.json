@@ -7,9 +7,11 @@
   "license": "PolyForm-Noncommercial-1.0.0",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test $(find registry client observatory e2e -name '*.test.ts' -not -path '*/node_modules/*')",
+    "test": "tsx --test $(find registry client observatory e2e constellation -name '*.test.ts' -not -path '*/node_modules/*')",
     "registry:dev": "tsx registry/server/server.ts",
-    "observatory:dev": "tsx observatory/server/endpoint.ts"
+    "observatory:dev": "tsx observatory/server/endpoint.ts",
+    "demo": "tsx scripts/demo.ts",
+    "publish": "tsx scripts/publish-frameworks.ts"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",

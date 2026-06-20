@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ml, math, monte-carlo, hyperparameters]
+galaxy: [ai-engineering, quant-markets]
+planet_id: planet_97b7706d7c8e886002340139f48fed3dadc93ad5
 ---
 
 # Sampling Beats the Lattice (Random Search Is Monte Carlo Over Configs)
@@ -38,3 +40,4 @@ pricing, risk simulation, integral estimation. One mental model, three domains.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

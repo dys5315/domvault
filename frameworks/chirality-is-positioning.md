@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, positioning, gtm, strategy]
+galaxy: [product-growth, leadership]
+planet_id: planet_cf0a1095a25ca512197330c9aa2ae5afcec16f42
 ---
 
 # Chirality Is Positioning
@@ -36,3 +38,4 @@ model.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

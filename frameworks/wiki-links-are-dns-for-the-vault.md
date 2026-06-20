@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, knowledge-graph, retrieval, networking, second-brain]
+galaxy: [ai-engineering, systems, knowledge]
+planet_id: planet_fb6a6e7cf1c472dff015996b6628a06a58d0562f
 ---
 
 # Wiki-Links Are DNS for the Vault
@@ -37,3 +39,4 @@ streetlight failure in a new costume — confidently walking to a node that isn'
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

@@ -28,6 +28,10 @@ function sendJson(res: ServerResponse, status: number, payload: unknown): void {
   res.writeHead(status, {
     "content-type": "application/json; charset=utf-8",
     "content-length": Buffer.byteLength(data),
+    // The registry is a PUBLIC, crawlable read surface (SPEC §6, federation) — the
+    // whole point is that any brain / the Explorer can fetch /universe. Permissive
+    // CORS on responses lets the browser Explorer read it from a different origin.
+    "access-control-allow-origin": "*",
   });
   res.end(data);
 }

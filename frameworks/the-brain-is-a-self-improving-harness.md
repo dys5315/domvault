@@ -1,10 +1,12 @@
 ---
-title: The Brain Is a Self-Improving Harness (Sparks Explore, Neurons Consolidate)
+title: "The Brain Is a Self-Improving Harness (Sparks Explore, Neurons Consolidate)"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ai-engineering, second-brain, agents, harness]
+galaxy: [ai-engineering, knowledge]
+planet_id: planet_f790403f845fab0914bad718ca9926705a4a5be5
 ---
 
 # The Brain Is a Self-Improving Harness (Sparks Explore, Neurons Consolidate)
@@ -50,3 +52,4 @@ Automate the *proposing and scoring*; keep a human *gate* on promotion.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

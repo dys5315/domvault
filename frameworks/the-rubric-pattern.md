@@ -1,10 +1,12 @@
 ---
-title: The Rubric Pattern (Graded, Explainable AI Is the Trust Primitive)
+title: "The Rubric Pattern (Graded, Explainable AI Is the Trust Primitive)"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ai-engineering, product, trust, evaluation]
+galaxy: [ai-engineering, product-growth, leadership]
+planet_id: planet_c3819786c14e5e8a839ea24222b30ca4f4c91f31
 ---
 
 # The Rubric Pattern (Graded, Explainable AI Is the Trust Primitive)
@@ -39,3 +41,4 @@ defensible part.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

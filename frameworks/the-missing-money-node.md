@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, revenue, gtm, product, money-node]
+galaxy: [product-growth]
+planet_id: planet_9db5abdfd7582281bf5884e2b3ba83cec518edd2
 ---
 
 # The Missing Money Node (Idea→Revenue Audit)
@@ -45,3 +47,4 @@ time-bound kill criteria.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

@@ -1,10 +1,12 @@
 ---
-title: The Fan-Out Port (Design as Spec, Parallel Porters, Build-Verify)
+title: "The Fan-Out Port (Design as Spec, Parallel Porters, Build-Verify)"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ai-engineering, agents, methodology, parallelism]
+galaxy: [ai-engineering]
+planet_id: planet_aef1166536d6dba59ed9f75230a238c6aee4bb80
 ---
 
 # The Fan-Out Port (Design as Spec, Parallel Porters, Build-Verify)
@@ -43,3 +45,4 @@ plumbing."
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

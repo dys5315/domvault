@@ -1,10 +1,12 @@
 ---
-title: Virality, Distribution & the Rubric
+title: "Virality, Distribution & the Rubric"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, virality, marketing, distribution, rubric]
+galaxy: [product-growth, ai-engineering]
+planet_id: planet_553668857a6b3ad44ac4ce74c2a5090eeb569735
 ---
 
 # Virality, Distribution & the Rubric
@@ -43,3 +45,4 @@ turns it from a hindsight label into a predictive tool.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

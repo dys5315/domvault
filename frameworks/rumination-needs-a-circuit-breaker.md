@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, well-being, feedback-control, distributed-systems]
+galaxy: [leadership, systems]
+planet_id: planet_54ed53976a3ed6e1b21f3bb846a232e9fa456fd7
 ---
 
 # Rumination Needs a Circuit Breaker
@@ -42,3 +44,4 @@ Rumination is an unstable closed loop, and the fix is a governor, not more gain.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

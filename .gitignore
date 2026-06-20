@@ -25,3 +25,6 @@ registry/.data/
 /test-brain/
 /my-brain/
 *.local.md
+.playwright-mcp/
+*.png
+/tmp

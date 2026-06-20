@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, productivity, linear-algebra, prioritization]
+galaxy: [knowledge, product-growth]
+planet_id: planet_340489b36eb7be3ad25b01fc91ccbb6ee333c6f7
 ---
 
 # Clarity Is PCA for Priorities
@@ -35,3 +37,4 @@ step in the clarity map.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

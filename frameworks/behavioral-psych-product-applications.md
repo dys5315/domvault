@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, psychology, product, behavior]
+galaxy: [product-growth]
+planet_id: planet_ce1aeda83155db442abe2c2eaecd9c7894fefc05
 ---
 
 # Behavioral Psychology — Product Applications
@@ -30,3 +32,4 @@ tags: [framework, psychology, product, behavior]
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

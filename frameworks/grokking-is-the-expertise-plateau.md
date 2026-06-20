@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ml, learning, mastery, deliberate-practice]
+galaxy: [ai-engineering, knowledge]
+planet_id: planet_a5031e68ff8ed23a42abe5265055a532ca2334ad
 ---
 
 # Grokking Is the Expertise Plateau
@@ -42,3 +44,4 @@ Quitting during the plateau is exiting one epoch before grokking.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

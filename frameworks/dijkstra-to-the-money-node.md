@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, algorithms, revenue, prioritization, gtm]
+galaxy: [product-growth]
+planet_id: planet_c51cbbb912b56db2fc2ec159d825fddc5debb4f3
 ---
 
 # Dijkstra to the Money Node
@@ -36,3 +38,4 @@ here — effort is never negative — so the algorithm is valid as-is.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

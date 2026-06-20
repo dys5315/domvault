@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, risk, rubric, fmea, detection]
+galaxy: [ai-engineering]
+planet_id: planet_cc38cf9fa84c18c16580aeab7c35aaf97d03b87e
 ---
 
 # FMEA Is the Rubric Pointed at Failure
@@ -39,3 +41,4 @@ post-mortem.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

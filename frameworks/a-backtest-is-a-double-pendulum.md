@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, quant, chaos, backtesting, robustness]
+galaxy: [quant-markets]
+planet_id: planet_a948d1ec6cdc8e202a264f1171cad092e3009326
 ---
 
 # A Backtest Is a Double Pendulum (Deterministic ≠ Predictable)
@@ -37,3 +39,4 @@ artifact will not be.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

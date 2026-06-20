@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, information-theory, ai, compression, memory]
+galaxy: [ai-engineering]
+planet_id: planet_c2e7894f2e414eeba534f71ebb844722e783801f
 ---
 
 # Compression Is the Through-Line
@@ -48,3 +50,4 @@ node.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

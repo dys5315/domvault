@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, evaluation, rubric, overfitting, anti-gaming]
+galaxy: [ai-engineering]
+planet_id: planet_89fc9fdbd876d071c225990ec48f43a0e967c77c
 ---
 
 # The Holdout Rule (Graded Systems Need Out-of-Sample)
@@ -36,3 +38,4 @@ metric, and (2) an independent out-of-sample validation that catches when the me
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

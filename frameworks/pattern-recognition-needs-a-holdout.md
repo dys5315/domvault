@@ -1,10 +1,12 @@
 ---
-title: Pattern Recognition Needs a Holdout (Or It's Apophenia)
+title: "Pattern Recognition Needs a Holdout (Or It's Apophenia)"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, pattern-recognition, ml, decision-making, holdout]
+galaxy: [ai-engineering, leadership]
+planet_id: planet_816e2d02459c6f519cee9fbb2317513698aa0d7b
 ---
 
 # Pattern Recognition Needs a Holdout (Or It's Apophenia)
@@ -34,3 +36,4 @@ edge and a curve-fit.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

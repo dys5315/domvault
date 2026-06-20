@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, quant, control-theory, systems-thinking]
+galaxy: [quant-markets, systems]
+planet_id: planet_440af4105819abbbbd8c9ae6af278bc73071ab7a
 ---
 
 # Volatility Harvesting (Feedback Control You Want Disturbed)
@@ -41,3 +43,4 @@ market-making, even churn-driven re-engagement) is a volatility harvester. The q
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

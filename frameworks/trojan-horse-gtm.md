@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, gtm, strategy, distribution, land-and-expand]
+galaxy: [product-growth, leadership]
+planet_id: planet_24f53aa7482291be08cf8713e86f497e0ee446e3
 ---
 
 # Trojan-Horse GTM (The Free Wedge Sells the Case Study)
@@ -42,3 +44,4 @@ it's manufacturing undeniable, transferable proof and routing it into the channe
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

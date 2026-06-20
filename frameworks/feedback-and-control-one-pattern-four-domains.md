@@ -1,10 +1,12 @@
 ---
-title: Feedback & Control (One Pattern, Four Domains)
+title: "Feedback & Control (One Pattern, Four Domains)"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, control-theory, systems-thinking, cross-domain]
+galaxy: [quant-markets, systems]
+planet_id: planet_d192a15b6225a390c0c0ad27b94b6cc7f6825083
 ---
 
 # Feedback & Control (One Pattern, Four Domains)
@@ -44,3 +46,4 @@ transfers:
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

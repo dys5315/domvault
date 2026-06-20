@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, operations, load-balancing, staffing, systems]
+galaxy: [leadership, systems]
+planet_id: planet_178614c495ce3b39a3bfe4136488e7a85d5485a4
 ---
 
 # Capacity-Aware Assignment (Round-Robin Is Naïve Staffing)
@@ -38,3 +40,4 @@ throughput and route the next task to max free weighted capacity. The men-days m
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

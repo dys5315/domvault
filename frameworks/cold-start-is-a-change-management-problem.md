@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, gtm, marketplace, change-management]
+galaxy: [product-growth]
+planet_id: planet_261718bf5a680aacd5e0ca953781dbfb95670bcd
 ---
 
 # Cold-Start Is a Change-Management Problem
@@ -40,3 +42,4 @@ first), and only then open the flywheel.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

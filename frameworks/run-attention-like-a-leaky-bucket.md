@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, productivity, systems-thinking, attention]
+galaxy: [knowledge, systems]
+planet_id: planet_d6398184c5a1738890eae1963325ea77f42e2ec1
 ---
 
 # Run Attention Like a Leaky Bucket
@@ -38,3 +40,4 @@ character flaw and becomes the overflow policy that keeps throughput stable.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

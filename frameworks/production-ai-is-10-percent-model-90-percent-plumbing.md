@@ -1,10 +1,12 @@
 ---
-title: Production AI Is 10% Model, 90% Plumbing
+title: "Production AI Is 10% Model, 90% Plumbing"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ai-engineering, agents, mlops, production]
+galaxy: [ai-engineering]
+planet_id: planet_5457aa332138bf7b2ccc745b9070070729469a67
 ---
 
 # Production AI Is 10% Model, 90% Plumbing
@@ -40,3 +42,4 @@ differentiation — actually lives.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

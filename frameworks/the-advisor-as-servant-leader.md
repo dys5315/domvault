@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, leadership, ux, ai-engineering, candor]
+galaxy: [leadership, product-growth, ai-engineering]
+planet_id: planet_81d5a726c2f2ef95a555b6a5a9afcfeac5dbe9d5
 ---
 
 # The Advisor as Servant-Leader
@@ -40,3 +42,4 @@ smooth it over?
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

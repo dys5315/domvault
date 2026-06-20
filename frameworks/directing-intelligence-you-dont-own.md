@@ -1,10 +1,12 @@
 ---
-title: Directing Intelligence You Don't Own (Managing Up Is the AI-Steering Playbook)
+title: "Directing Intelligence You Don't Own (Managing Up Is the AI-Steering Playbook)"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ai-engineering, management, delegation, agents]
+galaxy: [ai-engineering, leadership]
+planet_id: planet_fba93df17d9606be5a45238cbba146387fa3cd98
 ---
 
 # Directing Intelligence You Don't Own (Managing Up Is the AI-Steering Playbook)
@@ -42,3 +44,4 @@ every harness: verifiable + capability-building, never load-bearing-and-opaque.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

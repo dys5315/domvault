@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, math, optimization, control, curvature]
+galaxy: [quant-markets]
+planet_id: planet_9681376443462124eeef124780a75d12afe935c9
 ---
 
 # Curvature Is the Cost of Being Wrong
@@ -40,3 +42,4 @@ oscillating controller.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

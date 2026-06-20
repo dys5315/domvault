@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, second-brain, agents, knowledge-management]
+galaxy: [knowledge, ai-engineering]
+planet_id: planet_97249cb0b5561cc7038faae9fa5e67347e0f167c
 ---
 
 # The AI-Augmented Second Brain Stack
@@ -40,3 +42,4 @@ stack is portable across any domain you work in.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

@@ -1,10 +1,12 @@
 ---
-title: Throughput Comes From Removing Contention, Not From Tidiness
+title: "Throughput Comes From Removing Contention, Not From Tidiness"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, systems, operations, concurrency, throughput]
+galaxy: [systems, leadership]
+planet_id: planet_d2d9c6f89f29447138c9f076e5374978e4d7fbec
 ---
 
 # Throughput Comes From Removing Contention, Not From Tidiness
@@ -40,3 +42,4 @@ slow despite "being organized."
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

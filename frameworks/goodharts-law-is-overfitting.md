@@ -1,10 +1,12 @@
 ---
-title: Goodhart's Law Is Overfitting (Every Scored System Needs a Holdout)
+title: "Goodhart's Law Is Overfitting (Every Scored System Needs a Holdout)"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ml, metrics, evaluation, rubric]
+galaxy: [ai-engineering]
+planet_id: planet_1680ce1bbebd75694e55688fc70d4a93506b6027
 ---
 
 # Goodhart's Law Is Overfitting (Every Scored System Needs a Holdout)
@@ -35,3 +37,4 @@ hold out data the optimizer never sees, and watch for score-vs-reality drift on 
 
 ---
 *Genericized example from the Domvault engine. Original mental model © Dom Sadarangani, shared under PolyForm Noncommercial 1.0.0.*
+

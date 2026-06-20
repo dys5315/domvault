@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ai-engineering, agents, memory, estimation]
+galaxy: [ai-engineering]
+planet_id: planet_d58bccabb04040d1b1f0b2e035f1620a90b9fc6f
 ---
 
 # Agent Memory Is a Kalman Filter
@@ -39,3 +41,4 @@ ones.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

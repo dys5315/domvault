@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, engineering, workflow, event-sourcing, state]
+galaxy: [systems]
+planet_id: planet_a1e2add50f4969024fbe6258b84f622d902e41c4
 ---
 
 # Tesla-Valve the Workflow (Irreversibility by Construction)
@@ -41,3 +43,4 @@ append-only ratchets means the audit trail and the irreversibility are the same 
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

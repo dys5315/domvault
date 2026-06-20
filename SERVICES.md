@@ -20,11 +20,37 @@ telemetry**. TypeScript, run with `tsx`.
 
 ```bash
 npm install                # tsx + typescript + @types/node (dev only)
-npm test                   # 63 tests across A, C, F, G, and the E2E pipeline
+npm test                   # 68 tests across A, C, F, G, the E2E pipeline, and the Explorer mapping
 npm run typecheck          # tsc --noEmit, strict
 npm run registry:dev       # registry on PORT (default 8787)
 npm run observatory:dev    # Observatory on PORT (default 8080)
 ```
+
+## See your graph — one command
+
+```bash
+npm run demo               # registry up → publish frameworks/ → serve the Explorer
+```
+
+Then open **http://localhost:8080** — the Constellation Explorer renders the **live** registry:
+galaxies (topics) → solar systems (brains) → planets (your published frameworks). Click a planet
+to inspect its manifest (title, author, license, lineage, version, signature). The legend shows
+the data source (`🟢 Live` / `🟡 Mock` / `⚪ Offline`).
+
+What `demo` does, and the guarantees it keeps:
+
+1. **Registry up** (`registry/.data`, persisted so re-runs are idempotent).
+2. **Publish** `frameworks/*.md` only — `scripts/publish-frameworks.ts` runs each note through the
+   fail-closed stripper, signs it, and POSTs it. It **derives `galaxy` from each note's `tags`**
+   (mapping in that file's `TAG_GALAXY`) so the universe isn't one blob, and writes the
+   `planet_id` + `galaxy` back into the note. Re-running publishes the **same content-addressed
+   ids** — no duplicates (first-publish-wins).
+3. **Serve** `constellation/` over http so the Explorer's `fetch(/universe)` + module import work.
+
+**Keys & consent:** the brain keypair lives in `~/.constellation/` (**outside the repo, never
+committed**); the public key is your star. Only `frameworks/` is ever published — **the vault is
+never touched**. Point the Explorer at any registry with `?registry=http://host:port`; if it's
+unreachable the Explorer **degrades to the offline mock** (`constellation/mock/data.json`).
 
 ## The invariants (enforced + tested)
 

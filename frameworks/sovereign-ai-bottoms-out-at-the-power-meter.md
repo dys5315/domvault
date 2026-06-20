@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ai-infrastructure, energy, sovereignty]
+galaxy: [frameworks]
+planet_id: planet_c41466e7922e61b7cddfdabff17dd2bfda14abb0
 ---
 
 # Sovereign AI Bottoms Out at the Power Meter
@@ -35,3 +37,4 @@ question, not an identity, and it lives in kWh/day.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

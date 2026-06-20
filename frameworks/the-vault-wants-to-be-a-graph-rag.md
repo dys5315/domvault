@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ai-engineering, knowledge-graph, rag, second-brain]
+galaxy: [ai-engineering, knowledge]
+planet_id: planet_cc614e00367ea06913c4d49287c0f5b7dd1805c2
 ---
 
 # A Linked Vault Wants to Be a Graph RAG
@@ -41,3 +43,4 @@ multi-hop queries across clusters.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

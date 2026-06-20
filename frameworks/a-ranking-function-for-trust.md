@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, information-retrieval, reputation, ranking, trust]
+galaxy: [leadership]
+planet_id: planet_5d32751606cde2a7cf6d4cfc34429756addaa984
 ---
 
 # A Ranking Function for Trust (BM25 as a Reputation Engine)
@@ -47,3 +49,4 @@ fairness levers, not a black box.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

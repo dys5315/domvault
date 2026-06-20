@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, testing, engineering, economics, fixtures]
+galaxy: [systems]
+planet_id: planet_72cfd00c2a1b1f754e735a164b8aa490ed7b8f9e
 ---
 
 # Reusable Fixtures Are SpaceX Economics for Testing
@@ -34,3 +36,4 @@ program."
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

@@ -16,6 +16,15 @@ import type { NodeManifest } from "./types.ts";
 // form (so it cannot be an input to itself).
 const IDENTITY_EXCLUDED = new Set<string>(["id", "signature"]);
 
+// Excluded from the ID-DERIVATION payload: the above PLUS the per-publish-event
+// metadata. The id is CONTENT-addressed (SPEC §5) — title, author, body (via
+// content_hash), license, galaxy, links, origin — NOT *when* it was published or
+// *which* version. So re-publishing the same body yields the SAME id
+// (first-publish-wins; no duplicate), even across separate publish runs. The
+// signature still covers published_at + version (they stay in canonicalManifest),
+// so the timestamp can't be tampered with.
+const ID_EXCLUDED = new Set<string>(["id", "signature", "published_at", "version"]);
+
 // Length (in hex chars) of the id suffix. Long enough to be collision-safe for
 // a content-addressed registry, short enough to stay human-glanceable.
 const ID_HEX_LEN = 40;
@@ -65,8 +74,13 @@ export function contentHash(body: string): string {
  * transitively bound into the id too.
  */
 export function planetId(manifest: NodeManifest): string {
+  const clone: Record<string, unknown> = {};
+  for (const [key, val] of Object.entries(manifest)) {
+    if (ID_EXCLUDED.has(key)) continue; // content identity only — not publish time/version
+    clone[key] = val;
+  }
   const digest = createHash("sha256")
-    .update(canonicalManifest(manifest), "utf8")
+    .update(canonicalize(clone), "utf8")
     .digest("hex");
   return `planet_${digest.slice(0, ID_HEX_LEN)}`;
 }

@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ml, decision-making, bias, regularization]
+galaxy: [ai-engineering, leadership, systems]
+planet_id: planet_fdb9ed876f21b3394ae93ae020d2694e0f2c5270
 ---
 
 # Cognitive Biases Are Overfitting (Debiasing Is Regularization)
@@ -54,3 +56,4 @@ don't ship the decision.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

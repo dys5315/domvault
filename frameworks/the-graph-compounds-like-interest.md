@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, knowledge-graph, second-brain, compounding]
+galaxy: [ai-engineering, knowledge]
+planet_id: planet_4501c2a68ea4d8c9c46a51a0ee674fe82eea327c
 ---
 
 # The Graph Compounds Like Interest
@@ -33,3 +35,4 @@ loss — it's forgone compounding that permanently lowers the curve.
 
 ---
 *Genericized example from the Domvault engine. Original mental model © Dom Sadarangani, shared under PolyForm Noncommercial 1.0.0.*
+

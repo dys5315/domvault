@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, state-machine, product, engineering, funnel]
+galaxy: [product-growth, systems]
+planet_id: planet_9d9feb83ce230320fd32768dd4a50b03513a277b
 ---
 
 # Model the Funnel as a One-Way State Machine
@@ -36,3 +38,4 @@ event: the FSM's transition log *is* that event stream.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

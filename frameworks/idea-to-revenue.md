@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, validation, revenue, gtm]
+galaxy: [product-growth]
+planet_id: planet_443c3c11ef15f1ed7bc3b310cd20ea24831d1216
 ---
 
 # Idea to Revenue (A Validation Gate)
@@ -35,3 +37,4 @@ Decide how the idea *dies* before you start:
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

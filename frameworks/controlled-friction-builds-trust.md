@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, ux, negotiation, trust, ai-engineering]
+galaxy: [product-growth, leadership, ai-engineering]
+planet_id: planet_be9645a31cf4594ee430adbf9eb2334e029afb0f
 ---
 
 # Controlled Friction Builds Trust
@@ -38,3 +40,4 @@ assumption), which is exactly where a real strategist would dig in.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

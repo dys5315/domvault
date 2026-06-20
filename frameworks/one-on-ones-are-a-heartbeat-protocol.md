@@ -1,10 +1,12 @@
 ---
-title: 1:1s Are a Team's Heartbeat Protocol
+title: "1:1s Are a Team's Heartbeat Protocol"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, management, distributed-systems, observability, leadership]
+galaxy: [leadership, systems]
+planet_id: planet_f0e6e29f8a316ffc73d71bac19d35a5997077bdc
 ---
 
 # 1:1s Are a Team's Heartbeat Protocol
@@ -39,3 +41,4 @@ quitting — is precisely the one heartbeat monitoring is designed to catch earl
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

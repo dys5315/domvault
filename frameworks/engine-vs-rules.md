@@ -1,10 +1,12 @@
 ---
-title: Engine vs Rules (One Boundary, Three Jobs)
+title: "Engine vs Rules (One Boundary, Three Jobs)"
 author: Dom Sadarangani
 origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, architecture, multi-tenant, ip-strategy, design]
+galaxy: [frameworks]
+planet_id: planet_23cfcacf2b9bd2f227d821181cb0bb875f093581
 ---
 
 # Engine vs Rules (One Boundary, Three Jobs)
@@ -43,3 +45,4 @@ the guarantee.
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+

@@ -5,6 +5,8 @@ origin: ai-generated
 license: PolyForm-Noncommercial-1.0.0
 publish: true
 tags: [framework, data, analysis, bi]
+galaxy: [frameworks]
+planet_id: planet_88078aafa8d4efa6c7eb48e3d6c0910cb92e23f5
 ---
 
 # BI & Analysis Methodology
@@ -29,3 +31,4 @@ tags: [framework, data, analysis, bi]
 
 ---
 *Genericized from Dom's second brain, shared under PolyForm Noncommercial 1.0.0.*
+
