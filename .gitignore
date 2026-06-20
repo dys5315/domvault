@@ -13,6 +13,9 @@ dist/
 build/
 .cache/
 
+# Registry object store (local-only planet data)
+registry/.data/
+
 # Local agent session dirs
 .claude/
 
