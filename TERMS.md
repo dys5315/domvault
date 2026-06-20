@@ -36,8 +36,8 @@ people can share knowledge they **choose** to publish; it is not a backdoor into
 
 ## Contact
 
-Operator: **Dom Sadarangani** — `dom.sadarangani@gmail.com`.
-For takedown/removal requests, include the `planet_id`.
+Operator: **Dom Sadarangani**. Contact / takedown requests: **open an issue** at
+https://github.com/dys5315/domvault/issues (include the `planet_id`).
 
 ---
 
