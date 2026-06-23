@@ -4,9 +4,19 @@
   <img src="assets/hero.svg" alt="Domvault — a universe of brains: own your stack, share by consent, credit by default" width="100%">
 </p>
 
-> A Markdown-native knowledge engine (Obsidian + Claude) with a repeatable ingestion pipeline, a self-synthesis loop that generates new connections while you sleep, and an **opt-in** publishing layer that lets brains share knowledge into a shared galaxy — **Constellation**.
+> Own your notes (plain Markdown, on your machine), let an agent surface the connections between them, and share only what you choose — signed and credited.
 
-Domvault is the *engine*, not the *content*. You bring your own notes; the repo ships the structure, the workflows, the scripts, and the agent instructions that make a plain folder of Markdown behave like a living, self-improving graph.
+**▶ See it live** — explore my own notes as a zoomable universe, no install needed: **https://dys5315.github.io/domvault/constellation/**
+
+**What it is**
+
+- 🗃️ **Self-hosted & plain-text** — a folder of Markdown (works with Obsidian). No cloud, no telemetry, works offline.
+- 🧩 **An agent that connects your thinking** — it ingests what you save and proposes links between your own notes on a schedule.
+- 🔭 **Opt-in, attributed sharing** — publish individual notes (signed + content-addressed) to a shared graph; your vault stays private by default.
+
+> Domvault is the *engine*, not the *content*. You bring your own notes; the repo ships the structure, workflows, scripts, and agent instructions that make a plain folder of Markdown behave like a living, self-improving graph.
+
+*Source-available (PolyForm Noncommercial) · zero runtime dependencies · honest note: I designed and directed it, but an AI agent wrote most of the code.*
 
 ---
 
@@ -51,13 +61,13 @@ Everything inside a solar system is **owned and gated by its owner**. A planet o
 ## Quick start
 
 ```bash
-# 1. clone
-git clone https://github.com/<you>/domvault.git && cd domvault
+# see it first — publishes sample notes locally and opens the Constellation Explorer
+git clone https://github.com/dys5315/domvault.git && cd domvault
+npm install
+npm run demo
 
-# 2. scaffold a brand-new brain wherever you want it
+# then scaffold your own brain (open ~/my-brain in Obsidian, point Claude at it)
 ./plugin/install.sh ~/my-brain
-
-# 3. open ~/my-brain in Obsidian, point Claude at it, start capturing
 ```
 
 Full walkthrough: [`docs/03-getting-started.md`](docs/03-getting-started.md).
