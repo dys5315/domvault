@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Board</title>
+<style>html,body{margin:0;height:100%;background:#0b0d12;color:#fff;font-family:"Arial Black",Impact,Arial,sans-serif;overflow:hidden;cursor:none}
+.wrap{position:relative;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:4vh;text-align:center}
+h1{font-size:9vh;color:#ffd400;margin:0;letter-spacing:.02em}
+.r{font-size:4.2vh;margin-top:1.5vh}.r2{color:#ff5c5c}
+.pill{margin-top:3vh;background:#ffd400;color:#0b0d12;font-size:3.2vh;padding:1.2vh 4vw;border-radius:6vh}
+.spots{position:absolute;bottom:8vh;left:0;right:0;display:flex;justify-content:center;gap:9vw}
+.spot{font-size:15vh;color:#ffd400;line-height:1;border-bottom:1vh solid #ffd400;padding:0 1vw}
+.tick{position:absolute;bottom:2vh;right:2vw;font-size:2vh;color:#4b5060}</style></head>
+<body><div class="wrap"><h1>PICK-YOUR-PRIZE BOARD</h1>
+<div class="r">WIN ANY AUCTION → PICK ANY CARD ON THE BOARD</div>
+<div class="r r2">ANY SINGLE SALE OVER $10 TAKES ALL FOUR</div>
+<div class="pill">$1 STARTS • NEW BOARD WHEN IT EMPTIES</div>
+<div class="spots"><div class="spot">1</div><div class="spot">2</div><div class="spot">3</div><div class="spot">4</div></div>
+<div class="tick">press F for fullscreen</div></div>
+<script>document.addEventListener('keydown',e=>{if(e.key==='f'||e.key==='F'){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}});</script>
+</body></html>
