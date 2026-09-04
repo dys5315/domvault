@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Board (tight)</title>
+<style>html,body{margin:0;height:100%;background:#0b0d12;color:#fff;font-family:"Arial Black",Impact,Arial,sans-serif;overflow:hidden;cursor:none}
+.wrap{position:absolute;left:0;right:0;bottom:var(--b,5vh);display:flex;flex-direction:column;align-items:center;text-align:center;width:var(--w,56vw);margin:0 auto}
+h1{font-size:var(--h,5.2vh);color:#ffd400;margin:0 0 1vh;line-height:1.05}
+.r{font-size:var(--t,3vh);line-height:1.15}.r2{color:#ff5c5c;margin-top:.6vh}
+.pill{margin:1.6vh 0 2.2vh;background:#ffd400;color:#0b0d12;font-size:var(--p,2.5vh);padding:.9vh 2.5vw;border-radius:6vh;white-space:nowrap}
+.spots{display:flex;justify-content:center;gap:var(--g,4vw)}
+.spot{font-size:var(--n,13vh);color:#ffd400;line-height:1;border-bottom:1vh solid #ffd400;padding:0 .6vw}
+.tick{position:absolute;top:1vh;left:1vw;font-size:1.8vh;color:#4b5060}</style></head>
+<body><div class="wrap"><h1>PICK-YOUR-PRIZE BOARD</h1>
+<div class="r">WIN ANY AUCTION → PICK ANY CARD ON THE BOARD</div>
+<div class="r r2">ANY SINGLE SALE OVER $10 TAKES ALL FOUR</div>
+<div class="pill">$1 STARTS • NEW BOARD WHEN IT EMPTIES</div>
+<div class="spots"><div class="spot">1</div><div class="spot">2</div><div class="spot">3</div><div class="spot">4</div></div></div>
+<div class="tick">F fullscreen · ↑↓ move · ←→ number spacing · [ ] width · - = size</div>
+<script>
+const R=document.documentElement.style,S={b:5,w:56,g:4,k:1};
+function ap(){R.setProperty('--b',S.b+'vh');R.setProperty('--w',S.w+'vw');R.setProperty('--g',S.g+'vw');
+R.setProperty('--h',5.2*S.k+'vh');R.setProperty('--t',3*S.k+'vh');R.setProperty('--p',2.5*S.k+'vh');R.setProperty('--n',13*S.k+'vh');}
+document.addEventListener('keydown',e=>{const k=e.key;
+if(k==='f'||k==='F'){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();return}
+if(k==='ArrowUp')S.b+=2;if(k==='ArrowDown')S.b=Math.max(0,S.b-2);
+if(k==='ArrowRight')S.g+=1;if(k==='ArrowLeft')S.g=Math.max(0,S.g-1);
+if(k===']')S.w+=4;if(k==='[')S.w=Math.max(20,S.w-4);
+if(k==='=' ||k==='+')S.k+=.1;if(k==='-')S.k=Math.max(.4,S.k-.1);ap();});ap();
+</script></body></html>
